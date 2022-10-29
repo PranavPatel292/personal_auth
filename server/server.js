@@ -32,12 +32,4 @@ app.get("/posts", authToken, (req, res) => {
   res.json(posts.filter((post) => post.userName === req.user.userName));
 });
 
-app.post("/login", (req, res) => {
-  // Authenticate users by using database
-  const userName = req.body.userName;
-  const user = { userName: userName };
-  const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
-  res.json(accessToken);
-});
-
 app.listen(3000);
