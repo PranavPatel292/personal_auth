@@ -11,7 +11,6 @@ app.post("/token", (req, res) => {
   const refreshToken = req.body.token;
 
   if (refreshToken === null) return res.status(401);
-  //eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IlByYW5hdiIsImlhdCI6MTY2NzA4MjcxM30.ZHfbemPabv2h5gW3blsusESyiPlGNPnirLPIsSfo7PE
   if (
     !refreshTokenMap[refreshToken] ||
     refreshTokenMap[refreshToken] === undefined
